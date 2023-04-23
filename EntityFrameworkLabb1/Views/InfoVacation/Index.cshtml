@@ -1,0 +1,47 @@
+﻿@model IEnumerable<InfoVacationViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Översikt ledighet</h1>
+<table class="table table-success table-striped table-hover">
+    <thead class="table"><br/>
+    <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model => model.LastName)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model => model.VacationType)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+    </th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VacationType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

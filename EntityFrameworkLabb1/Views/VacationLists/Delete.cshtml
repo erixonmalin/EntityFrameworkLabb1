@@ -1,0 +1,52 @@
+﻿@model EntityFrameworkLabb1.Models.Domain.VacationList
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Radera</h1>
+
+<h3>Är du säker på att du vill ta bort?</h3>
+<div>
+    <h4>Ledighetslista</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AskDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AskDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Employees)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employees.FirstName) 
+            @Html.DisplayFor(model => model.Employees.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vacations.VacationType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vacations.VacationType)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VacationListId" />
+        <input type="submit" value="Ta bort" class="btn btn-outline-danger" /> |
+        <a asp-action="Index">Tillbaka till listan</a>
+    </form>
+</div>

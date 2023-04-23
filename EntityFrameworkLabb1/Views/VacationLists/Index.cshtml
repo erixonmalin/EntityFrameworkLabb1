@@ -1,0 +1,65 @@
+﻿@model IEnumerable<EntityFrameworkLabb1.Models.Domain.VacationList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ledighetsansökan</h1>
+
+<p>
+    <a asp-action="Create">Ansök här</a>
+</p>
+<table class="table table-success table-striped">
+    <thead class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AskDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacations.VacationType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AskDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employees.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employees.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vacations.VacationType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VacationListId">Ändra</a> |
+                <a asp-action="Details" asp-route-id="@item.VacationListId">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.VacationListId">Ta bort</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

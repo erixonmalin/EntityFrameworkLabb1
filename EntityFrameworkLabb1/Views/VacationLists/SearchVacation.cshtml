@@ -1,0 +1,20 @@
+﻿<h4>Sök efter ledighet utifrån namn</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ViewSearchResults">
+            <div class="form-group">
+                <label for="SearchVacation" class="control-label">Efternamn</label>
+                <input name="SearchVacation" class ="form-control">
+            </div><br/>
+            <div class="form-group">
+                <input type="submit" value="Sök" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Tillbaka till listan</a>
+</div>
+
